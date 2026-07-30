@@ -1,18 +1,30 @@
-import React from 'react'
-import'./SkillCard.css'
-function SkillCard({name, level, icon}) {
-    const levelPercent = {Beginner: 33, Intermediate: 66, Advanced: 90}
-    const pct = levelPercent [level] || 50;
+// src/components/SkillCard/SkillCard.jsx
+import React from 'react';
+import './SkillCard.css';
+
+function SkillCard({ name = 'Skill Name', level = '50%' }) {
+  // Ensures level always has '%' formatting even if a raw number is passed
+  const formattedLevel = typeof level === 'number' ? `${level}%` : level;
+
   return (
-    <div className='skill-card'>
-      {icon && <span className='skill-icon'>{icon}</span>}
-      <h4 className='skill-name'>{name}</h4>
-      <p className='skill-level'>{level}</p>
-      <div className='skill-bar'>
-        <div className='skill-fill'style={{width: `${pct}%`}}/>
+    <div className="skill-card">
+      <div className="skill-info" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+        <h3 className="skill-name">{name}</h3>
+        <span className="skill-percentage">{formattedLevel}</span>
+      </div>
+      <div className="progress-bar" style={{ background: '#e0e0e0', borderRadius: '4px', overflow: 'hidden', height: '10px' }}>
+        <div 
+          className="fill" 
+          style={{ 
+            width: formattedLevel, 
+            height: '100%', 
+            backgroundColor: '#f39c12', 
+            transition: 'width 0.5s ease-in-out' 
+          }}
+        ></div>
       </div>
     </div>
-  )
+  );
 }
 
-export default SkillCard
+export default SkillCard;

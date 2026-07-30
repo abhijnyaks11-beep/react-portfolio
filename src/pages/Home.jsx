@@ -1,0 +1,33 @@
+// src/pages/Home.jsx
+import { projectsData } from '../data/projects';
+import ProjectCard from '../components/ProjectCard/ProjectCard';
+import Hero from '../components/Hero/Hero';
+import AboutSection from '../components/AboutSection/AboutSection';
+import SkillCard from '../components/SkillCard/SkillCard'; // <-- Import Skills
+import Contact from './Contact'; // <-- Import Contact
+
+function Home() {
+  const featured = projectsData.filter(p => p.featured);
+
+  return (
+    <div className='home-page'>
+      <Hero />
+      <AboutSection />
+
+      {/* 1. Added Skills section to Home Page */}
+      <SkillCard />
+
+      <section className='featured-section container' id='projects'>
+        <h2>Featured Projects</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+          {featured.map(p => <ProjectCard key={p.id} project={p} />)}
+        </div>
+      </section>
+
+      {/* 2. Added Contact section to Home Page */}
+      <Contact />
+    </div>
+  );
+}
+
+export default Home;
