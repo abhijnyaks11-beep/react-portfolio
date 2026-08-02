@@ -1,6 +1,6 @@
 import './AboutPage.css';
 import AboutSection from '../components/AboutSection/AboutSection';
-import GitHubStats from '../components/GitHubStats/GitHubStats';
+import GitHubStats from '../components/GithubStats/GithubStats.jsx';
 import SkillCard from '../components/SkillCard/SkillCard';
 
 const SKILLS = [
