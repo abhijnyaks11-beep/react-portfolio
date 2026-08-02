@@ -1,6 +1,6 @@
 // src/components/GitHubStats/GitHubStats.jsx
 import { useState, useEffect } from 'react';
-import './GitHubStats.css';
+import './GithubStats.css';
 
 function GitHubStats({ username = 'your-github-username' }) {
     const [stats, setStats] = useState(null);
