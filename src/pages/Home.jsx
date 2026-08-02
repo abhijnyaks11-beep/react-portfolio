@@ -3,8 +3,8 @@ import { projectsData } from '../data/projects';
 import ProjectCard from '../components/ProjectCard/ProjectCard';
 import Hero from '../components/Hero/Hero';
 import AboutSection from '../components/AboutSection/AboutSection';
-import SkillCard from '../components/SkillCard/SkillCard'; // <-- Import Skills
-import Contact from './Contact'; // <-- Import Contact
+import SkillCard from '../components/SkillCard/SkillCard'; 
+import Contact from './Contact'; 
 
 function Home() {
   const featured = projectsData.filter(p => p.featured);
@@ -13,8 +13,6 @@ function Home() {
     <div className='home-page'>
       <Hero />
       <AboutSection />
-
-      {/* 1. Added Skills section to Home Page */}
       <SkillCard />
 
       <section className='featured-section container' id='projects'>
@@ -24,7 +22,6 @@ function Home() {
         </div>
       </section>
 
-      {/* 2. Added Contact section to Home Page */}
       <Contact />
     </div>
   );
