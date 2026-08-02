@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import './GithubStats.css';
 
-function GitHubStats({ username = 'your-github-username' }) {
+function GithubStats({ username = 'your-github-username' }) {
     const [stats, setStats] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -71,4 +71,4 @@ function GitHubStats({ username = 'your-github-username' }) {
     );
 }
 
-export default GitHubStats;
+export default GithubStats;
